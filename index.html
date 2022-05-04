@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Start Page</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"/>
+        <link rel="stylesheet" href="css/bootstrap.min.css"/>
+    </head>
+    <body>
+
+        <div class="container">
+            <h1>LISTA DE ALUMNOS </h1>
+
+            <HR>
+            <button class="btn btn-primary" style="margin-bottom: 20px" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo"> ADD </button>
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Registrar Alumnos</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                                <div class="form-group">
+                                    <label for="recipient-name" class="col-form-label">NOMBRE </label>
+                                    <input type="text" class="form-control" id="titulo" placeholder="Titulo">
+                                </div>
+                                <div class="form-group">
+                                    <label for="message-text" class="col-form-label"> DIRECCION</label>
+                                    <textarea class="form-control" id="descripcion" placeholder="Descripcion"></textarea>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary" onclick="guardar()">Registrar ALUMNO</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--Modal Modificar POST-->
+            
+            <div class="modal fade" id="modalEditar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Modificar </h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                                <div class="form-group">
+                                    <label for="recipient-name" class="col-form-label">NOMBRE DEL ALUMNO </label>
+                                    <input type="text" class="form-control" id="editar_titulo" placeholder="Titulo">
+                                    <input type="hidden" class="form-control" id="idm" value="0">
+                                </div>
+                                <div class="form-group">
+                                    <label for="message-text" class="col-form-label">DIRECCIÓN </label>
+                                    <textarea class="form-control" id="editar_descripcion" placeholder="Descripcion"></textarea>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary" onclick="modificar()">Modificar Alumno</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- termina el modal--> 
+            
+            <div class="row"> 
+                <div class="col">
+                    <table class="table" id="tablita">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">ID ALUMNO</th>
+                                <th scope="col">NOMBRE</th>
+                                <th scope="col">DIRECCIÓN</th>
+                                <th scope="col" colspan="2">ACCION</th>
+                            </tr>
+                        </thead>
+                        <tbody >
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <script src="js/jquery-3.6.0.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/post.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/5.5.2/bootbox.min.js"></script>
+    </body>
+</html>
